@@ -1,0 +1,38 @@
+{
+  "_comment": "Draft copy, not final — Rev A's original content spec isn't in this project folder, so this was written fresh (see Engineering-Log.md). Replace [NAME], [GROOM], and [DATE] with real facts; edit the rest freely, it's a starting point, not locked copy. Keep serials in sync with firmware/config.h's Personalization::SERIAL_NUMBER for each unit. Site reads ?unit=LPE-GM-001 from the URL and looks it up here.",
+  "units": {
+    "LPE-GM-001": {
+      "name": "[NAME]",
+      "callsign": "BEST MAN",
+      "objectives": [
+        "Report for duty on [DATE] — full mission briefing at check-in.",
+        "Secure the groom's suit, rings, and general composure. In that order.",
+        "Deliver the best man speech. Keep it under control; keep it real.",
+        "Stand beside [GROOM] at the altar. This is the actual mission."
+      ],
+      "hiddenMessage": "SERVICE LOG — This unit was custom-built by [GROOM] for one reason: you've always shown up when it counted. Every objective on this screen is real — [DATE], for real. Thanks for saying yes to standing up there with me. — [GROOM]"
+    },
+    "LPE-GM-002": {
+      "name": "[NAME]",
+      "callsign": "GROOMSMAN",
+      "objectives": [
+        "Report for duty on [DATE] — full mission briefing at check-in.",
+        "Secure your own attire. Show up sharp.",
+        "Back up the best man. He's going to need it.",
+        "Stand beside [GROOM] at the altar. This is the actual mission."
+      ],
+      "hiddenMessage": "SERVICE LOG — [GROOM] built this thing himself (mostly) because store-bought gifts don't say \"I'm glad you're part of this.\" [DATE] is coming. Thanks for being there. — [GROOM]"
+    },
+    "LPE-GM-003": {
+      "name": "[NAME]",
+      "callsign": "GROOMSMAN",
+      "objectives": [
+        "Report for duty on [DATE] — full mission briefing at check-in.",
+        "Secure your own attire. Show up sharp.",
+        "Back up the best man. He's going to need it.",
+        "Stand beside [GROOM] at the altar. This is the actual mission."
+      ],
+      "hiddenMessage": "SERVICE LOG — [GROOM] built this thing himself (mostly) because store-bought gifts don't say \"I'm glad you're part of this.\" [DATE] is coming. Thanks for being there. — [GROOM]"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MISSION CONTROL // LPE-GM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="crt">
+    <header class="titlebar">
+      <span class="titlebar-id">LPE&#8209;GM // MISSION CONTROL</span>
+      <span class="titlebar-status" id="clock">--:--:--</span>
+    </header>
+
+    <main class="panel-grid">
+      <section class="panel" id="panel-boot">
+        <h2 class="panel-title">SYSTEM STATUS</h2>
+        <pre id="bootLog" class="boot-log"></pre>
+      </section>
+
+      <section class="panel" id="panel-personnel">
+        <h2 class="panel-title">PERSONNEL RECORD</h2>
+        <dl class="record">
+          <dt>NAME</dt><dd id="pName">—</dd>
+          <dt>ROLE</dt><dd id="pCallsign">—</dd>
+          <dt>UNIT</dt><dd id="pSerial">—</dd>
+        </dl>
+      </section>
+
+      <section class="panel" id="panel-mission">
+        <h2 class="panel-title">MISSION OBJECTIVES</h2>
+        <ol id="objectivesList" class="objectives"></ol>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <button id="adminToggle" class="admin-hotspot" aria-label="service menu" title="&nbsp;">&#9679;</button>
+      <span class="footer-text">LPE&#8209;GM // AUTHORIZED PERSONNEL ONLY // TAP TO ACKNOWLEDGE</span>
+    </footer>
+
+    <div id="hiddenMenu" class="hidden-menu" hidden>
+      <div class="hidden-menu-inner">
+        <h2 class="panel-title">SERVICE MENU</h2>
+        <p id="hiddenMessage" class="hidden-message"></p>
+        <button id="hiddenClose" class="close-btn">CLOSE</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
