@@ -94,8 +94,9 @@ function setupHiddenMenu(unit) {
   messageEl.textContent = unit.hiddenMessage || "";
   renderPuzzle(unit);
 
-  // Secret-menu gesture: 5 taps within 3 seconds. Placeholder mechanism — Rev A's exact
-  // "hidden menu" spec isn't in this project folder, see Engineering-Log.md.
+  // Secret-menu gesture: 5 taps within 4.5s (widened from 3s — real thumbs on a
+  // real phone need more slack than a mouse click does). Placeholder mechanism —
+  // Rev A's exact "hidden menu" spec isn't in this project folder, see Engineering-Log.md.
   let taps = 0;
   let resetTimer = null;
   const open = () => { menu.hidden = false; };
@@ -104,7 +105,7 @@ function setupHiddenMenu(unit) {
   toggle.addEventListener("click", () => {
     taps++;
     clearTimeout(resetTimer);
-    resetTimer = setTimeout(() => { taps = 0; }, 3000);
+    resetTimer = setTimeout(() => { taps = 0; }, 4500);
     if (taps >= 5) { taps = 0; open(); }
   });
   closeBtn.addEventListener("click", close);

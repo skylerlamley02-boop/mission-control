@@ -176,8 +176,16 @@ html, body {
   color: var(--border);
   font-size: 0.6rem;
   cursor: default;
-  padding: 0.5rem;
   line-height: 1;
+  /* Dot stays visually tiny/easy-to-miss on purpose — this is just a much
+     bigger invisible tap target around it (min 44px, mobile a11y guideline)
+     so it's actually hittable on a phone without making it look like a button. */
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
 }
 .admin-hotspot:focus-visible { color: var(--amber-dim); cursor: pointer; }
 
