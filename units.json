@@ -1,38 +1,50 @@
 {
-  "_comment": "Draft copy, not final — Rev A's original content spec isn't in this project folder, so this was written fresh (see Engineering-Log.md). Replace [NAME], [GROOM], and [DATE] with real facts; edit the rest freely, it's a starting point, not locked copy. Keep serials in sync with firmware/config.h's Personalization::SERIAL_NUMBER for each unit. Site reads ?unit=LPE-GM-001 from the URL and looks it up here.",
+  "_comment": "Real content as of 2026-08-13 — see Engineering-Log.md. puzzleClue is intentionally identical across units (same physical switch mechanic on every build). puzzleLinkUrl is intentionally BLANK per unit — each groomsman gets a different destination, and only Skyler knows them. To fill one in: paste the URL between the quotes on that unit's puzzleLinkUrl line below, save, redeploy (see README.md). 'serial' must match that unit's firmware Personalization::SERIAL_NUMBER (config.h) exactly, since it's what's physically printed/shown on the device itself — LPE-GM-00N stays as the internal URL routing key only (?unit=...), it is never shown on screen. Units 002/003 need their real serial filled in once chosen/flashed.",
   "units": {
     "LPE-GM-001": {
-      "name": "[NAME]",
+      "name": "JAKE",
       "callsign": "BEST MAN",
+      "serial": "GFAB",
       "objectives": [
-        "Report for duty on [DATE] — full mission briefing at check-in.",
+        "Report for duty on 10.20.2028 — full mission briefing at check-in.",
         "Secure the groom's suit, rings, and general composure. In that order.",
         "Deliver the best man speech. Keep it under control; keep it real.",
-        "Stand beside [GROOM] at the altar. This is the actual mission."
+        "Stand beside Skyler at the altar. This is the actual mission."
       ],
-      "hiddenMessage": "SERVICE LOG — This unit was custom-built by [GROOM] for one reason: you've always shown up when it counted. Every objective on this screen is real — [DATE], for real. Thanks for saying yes to standing up there with me. — [GROOM]"
+      "hiddenMessage": "SERVICE LOG — This unit was custom-built by Skyler for one reason: you've always shown up when it counted. Every objective on this screen is real — 10.20.2028, for real. Thanks for saying yes to standing up there with me. — Skyler",
+      "puzzleClue": "◈ INTERCEPT — SRC UNKNOWN — 61% RECOVERED ◈\n\n\"...not all of them are true. only one. it has to go first, alone — the other one still lying, still wrong. it cannot look away. not once. not even to blink — or the count forgets itself and you begin again from nothing. the second one only tells the truth after the first has already proven itself, by itself, with no one watching...\"\n\n◈ SIGNAL LOST ◈",
+      "puzzleLinkUrl": "",
+      "puzzleLinkText": "CLICK HERE TO SOLVE PUZZLE"
     },
     "LPE-GM-002": {
-      "name": "[NAME]",
+      "name": "ALEX",
       "callsign": "GROOMSMAN",
+      "serial": "[SERIAL]",
       "objectives": [
-        "Report for duty on [DATE] — full mission briefing at check-in.",
+        "Report for duty on 10.20.2028 — full mission briefing at check-in.",
         "Secure your own attire. Show up sharp.",
         "Back up the best man. He's going to need it.",
-        "Stand beside [GROOM] at the altar. This is the actual mission."
+        "Stand beside Skyler at the altar. This is the actual mission."
       ],
-      "hiddenMessage": "SERVICE LOG — [GROOM] built this thing himself (mostly) because store-bought gifts don't say \"I'm glad you're part of this.\" [DATE] is coming. Thanks for being there. — [GROOM]"
+      "hiddenMessage": "SERVICE LOG — Skyler built this thing himself (mostly) because store-bought gifts don't say \"I'm glad you're part of this.\" 10.20.2028 is coming. Thanks for being there. — Skyler",
+      "puzzleClue": "◈ INTERCEPT — SRC UNKNOWN — 61% RECOVERED ◈\n\n\"...not all of them are true. only one. it has to go first, alone — the other one still lying, still wrong. it cannot look away. not once. not even to blink — or the count forgets itself and you begin again from nothing. the second one only tells the truth after the first has already proven itself, by itself, with no one watching...\"\n\n◈ SIGNAL LOST ◈",
+      "puzzleLinkUrl": "",
+      "puzzleLinkText": "CLICK HERE TO SOLVE PUZZLE"
     },
     "LPE-GM-003": {
-      "name": "[NAME]",
+      "name": "BEN",
       "callsign": "GROOMSMAN",
+      "serial": "[SERIAL]",
       "objectives": [
-        "Report for duty on [DATE] — full mission briefing at check-in.",
+        "Report for duty on 10.20.2028 — full mission briefing at check-in.",
         "Secure your own attire. Show up sharp.",
         "Back up the best man. He's going to need it.",
-        "Stand beside [GROOM] at the altar. This is the actual mission."
+        "Stand beside Skyler at the altar. This is the actual mission."
       ],
-      "hiddenMessage": "SERVICE LOG — [GROOM] built this thing himself (mostly) because store-bought gifts don't say \"I'm glad you're part of this.\" [DATE] is coming. Thanks for being there. — [GROOM]"
+      "hiddenMessage": "SERVICE LOG — Skyler built this thing himself (mostly) because store-bought gifts don't say \"I'm glad you're part of this.\" 10.20.2028 is coming. Thanks for being there. — Skyler",
+      "puzzleClue": "◈ INTERCEPT — SRC UNKNOWN — 61% RECOVERED ◈\n\n\"...not all of them are true. only one. it has to go first, alone — the other one still lying, still wrong. it cannot look away. not once. not even to blink — or the count forgets itself and you begin again from nothing. the second one only tells the truth after the first has already proven itself, by itself, with no one watching...\"\n\n◈ SIGNAL LOST ◈",
+      "puzzleLinkUrl": "",
+      "puzzleLinkText": "CLICK HERE TO SOLVE PUZZLE"
     }
   }
 }

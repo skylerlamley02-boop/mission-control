@@ -7,7 +7,14 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="crt">
+  <div id="landing" class="landing">
+    <div class="landing-inner">
+      <p class="landing-kicker blink">LPE&#8209;GM // INCOMING TRANSMISSION</p>
+      <button id="acceptBtn" class="accept-btn">ACCEPT MISSION</button>
+    </div>
+  </div>
+
+  <div class="crt" id="crt" hidden>
     <header class="titlebar">
       <span class="titlebar-id">LPE&#8209;GM // MISSION CONTROL</span>
       <span class="titlebar-status" id="clock">--:--:--</span>
@@ -17,6 +24,7 @@
       <section class="panel" id="panel-boot">
         <h2 class="panel-title">SYSTEM STATUS</h2>
         <pre id="bootLog" class="boot-log"></pre>
+        <p id="anomalyHint" class="anomaly-hint blink" hidden>&gt; ANOMALY: UNSCHEDULED SIGNAL ON AUX CHANNEL — SOURCE UNRESOLVED</p>
       </section>
 
       <section class="panel" id="panel-personnel">
@@ -43,6 +51,9 @@
       <div class="hidden-menu-inner">
         <h2 class="panel-title">SERVICE MENU</h2>
         <p id="hiddenMessage" class="hidden-message"></p>
+        <h3 class="panel-title puzzle-title">AUX CHANNEL — RECOVERED FRAGMENT</h3>
+        <pre id="puzzleClue" class="puzzle-clue"></pre>
+        <a id="puzzleLink" class="puzzle-link" href="#" target="_blank" rel="noopener"></a>
         <button id="hiddenClose" class="close-btn">CLOSE</button>
       </div>
     </div>

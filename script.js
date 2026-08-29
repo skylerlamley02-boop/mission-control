@@ -9,15 +9,19 @@ const DEFAULT_UNIT_ID = "LPE-GM-001";
 // units.json fetch below is the real path.
 const FALLBACK_UNITS = {
   "LPE-GM-001": {
-    name: "[NAME]",
+    name: "JAKE",
     callsign: "BEST MAN",
+    serial: "GFAB",
     objectives: [
-      "Report for duty on [DATE] — full mission briefing at check-in.",
+      "Report for duty on 10.20.2028 — full mission briefing at check-in.",
       "Secure the groom's suit, rings, and general composure. In that order.",
       "Deliver the best man speech. Keep it under control; keep it real.",
-      "Stand beside [GROOM] at the altar. This is the actual mission.",
+      "Stand beside Skyler at the altar. This is the actual mission.",
     ],
-    hiddenMessage: "SERVICE LOG — This unit was custom-built by [GROOM] for one reason: you've always shown up when it counted. Every objective on this screen is real — [DATE], for real. Thanks for saying yes to standing up there with me. — [GROOM]",
+    hiddenMessage: "SERVICE LOG — This unit was custom-built by Skyler for one reason: you've always shown up when it counted. Every objective on this screen is real — 10.20.2028, for real. Thanks for saying yes to standing up there with me. — Skyler",
+    puzzleClue: "◈ INTERCEPT — SRC UNKNOWN — 61% RECOVERED ◈\n\n\"...not all of them are true. only one. it has to go first, alone — the other one still lying, still wrong. it cannot look away. not once. not even to blink — or the count forgets itself and you begin again from nothing. the second one only tells the truth after the first has already proven itself, by itself, with no one watching...\"\n\n◈ SIGNAL LOST ◈",
+    puzzleLinkUrl: "",
+    puzzleLinkText: "CLICK HERE TO SOLVE PUZZLE",
   },
 };
 
@@ -55,12 +59,40 @@ function renderClock() {
   setInterval(tick, 1000);
 }
 
+function renderAnomalyHint() {
+  // Layered discovery: a delayed, easy-to-miss status blip is the only hint on the
+  // main screen that anything is hidden — it does not explain the tap gesture below.
+  setTimeout(() => {
+    const hint = document.getElementById("anomalyHint");
+    if (hint) hint.hidden = false;
+  }, 3200);
+}
+
+function renderPuzzle(unit) {
+  const clueEl = document.getElementById("puzzleClue");
+  clueEl.textContent = unit.puzzleClue || "";
+
+  const linkEl = document.getElementById("puzzleLink");
+  if (unit.puzzleLinkUrl) {
+    linkEl.href = unit.puzzleLinkUrl;
+    linkEl.textContent = unit.puzzleLinkText || "CLICK HERE TO SOLVE PUZZLE";
+    linkEl.classList.remove("puzzle-link-pending");
+    linkEl.removeAttribute("aria-disabled");
+  } else {
+    linkEl.removeAttribute("href");
+    linkEl.textContent = "[ CHANNEL NOT YET PATCHED ]";
+    linkEl.classList.add("puzzle-link-pending");
+    linkEl.setAttribute("aria-disabled", "true");
+  }
+}
+
 function setupHiddenMenu(unit) {
   const toggle = document.getElementById("adminToggle");
   const menu = document.getElementById("hiddenMenu");
   const closeBtn = document.getElementById("hiddenClose");
   const messageEl = document.getElementById("hiddenMessage");
   messageEl.textContent = unit.hiddenMessage || "";
+  renderPuzzle(unit);
 
   // Secret-menu gesture: 5 taps within 3 seconds. Placeholder mechanism — Rev A's exact
   // "hidden menu" spec isn't in this project folder, see Engineering-Log.md.
@@ -80,6 +112,20 @@ function setupHiddenMenu(unit) {
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
 }
 
+function armAcceptGate(startSequence) {
+  // Nothing in the main panel starts (typewriter, anomaly hint, hidden-menu
+  // gesture) until the user taps through — the accept button is the actual
+  // entry point on mobile, not page load.
+  const landing = document.getElementById("landing");
+  const crt = document.getElementById("crt");
+  const acceptBtn = document.getElementById("acceptBtn");
+  acceptBtn.addEventListener("click", () => {
+    landing.hidden = true;
+    crt.hidden = false;
+    startSequence();
+  }, { once: true });
+}
+
 async function main() {
   renderClock();
 
@@ -89,7 +135,7 @@ async function main() {
 
   document.getElementById("pName").textContent = unit.name;
   document.getElementById("pCallsign").textContent = unit.callsign;
-  document.getElementById("pSerial").textContent = unitId;
+  document.getElementById("pSerial").textContent = unit.serial || unitId;
 
   const objectivesEl = document.getElementById("objectivesList");
   objectivesEl.innerHTML = "";
@@ -99,14 +145,20 @@ async function main() {
     objectivesEl.appendChild(li);
   });
 
-  typewriter(document.getElementById("bootLog"), [
-    "LPE-GM MISSION CONTROL",
-    "LINK ESTABLISHED...OK",
-    `UNIT ${unitId}...ONLINE`,
-    "ALL SYSTEMS NOMINAL",
-  ]);
-
+  // Wires the footer's 5-tap gesture to the hidden service menu (personal
+  // message + the AUX CHANNEL puzzle clue/link). Safe to arm now — inert
+  // until the user finds and taps it, same as before this landing gate existed.
   setupHiddenMenu(unit);
+
+  armAcceptGate(() => {
+    typewriter(document.getElementById("bootLog"), [
+      "LPE-GM MISSION CONTROL",
+      "LINK ESTABLISHED...OK",
+      `UNIT ${unitId}...ONLINE`,
+      "ALL SYSTEMS NOMINAL",
+    ]);
+    renderAnomalyHint();
+  });
 }
 
 main();
