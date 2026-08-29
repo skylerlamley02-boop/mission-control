@@ -60,12 +60,14 @@ function renderClock() {
 }
 
 function renderAnomalyHint() {
-  // Layered discovery: a delayed, easy-to-miss status blip is the only hint on the
-  // main screen that anything is hidden — it does not explain the tap gesture below.
+  // Made deliberately easy to notice/access (2026-08-28) — this used to be inert
+  // text pointing at an obscure 5-tap footer gesture; it's now a directly tappable
+  // button that opens the puzzle straight away. Still appears with a short delay
+  // (a "boot sequence found something" beat) rather than instantly.
   setTimeout(() => {
     const hint = document.getElementById("anomalyHint");
     if (hint) hint.hidden = false;
-  }, 3200);
+  }, 1500);
 }
 
 function renderPuzzle(unit) {
@@ -94,14 +96,19 @@ function setupHiddenMenu(unit) {
   messageEl.textContent = unit.hiddenMessage || "";
   renderPuzzle(unit);
 
-  // Secret-menu gesture: 5 taps within 4.5s (widened from 3s — real thumbs on a
-  // real phone need more slack than a mouse click does). Placeholder mechanism —
-  // Rev A's exact "hidden menu" spec isn't in this project folder, see Engineering-Log.md.
-  let taps = 0;
-  let resetTimer = null;
   const open = () => { menu.hidden = false; };
   const close = () => { menu.hidden = true; };
 
+  // Primary entrance (2026-08-28): the visible anomaly-hint button opens the menu
+  // directly — no gesture required. This is now the intended way in.
+  const anomalyBtn = document.getElementById("anomalyHint");
+  if (anomalyBtn) anomalyBtn.addEventListener("click", open);
+
+  // Secret-menu gesture kept as a fallback/easter egg: 5 taps within 4.5s on the
+  // small footer dot also opens the same menu. Placeholder mechanism — Rev A's
+  // exact "hidden menu" spec isn't in this project folder, see Engineering-Log.md.
+  let taps = 0;
+  let resetTimer = null;
   toggle.addEventListener("click", () => {
     taps++;
     clearTimeout(resetTimer);

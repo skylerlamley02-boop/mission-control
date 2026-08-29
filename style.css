@@ -215,12 +215,30 @@ html, body {
 }
 
 .anomaly-hint {
+  appearance: none;
+  display: block;
+  width: 100%;
+  text-align: left;
   margin: 0.75rem 0 0;
+  font-family: inherit;
   font-size: 0.75rem;
   letter-spacing: 0.05em;
   color: var(--amber-dim);
+  background: transparent;
+  border: 1px dashed var(--amber-dim);
+  border-radius: 2px;
+  padding: 0.5rem 0.6rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 .anomaly-hint[hidden] { display: none; }
+.anomaly-hint:hover,
+.anomaly-hint:active,
+.anomaly-hint:focus-visible {
+  color: var(--amber);
+  border-color: var(--amber);
+  border-style: solid;
+}
 
 .puzzle-title {
   margin-top: 1.25rem;
