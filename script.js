@@ -1,24 +1,24 @@
-// LPE-GM Mission Control — Spec Section 4 (styling/behavior) + Section 9 (config-driven
+// GM Mission Control — Spec Section 4 (styling/behavior) + Section 9 (config-driven
 // personalization, no per-unit site changes). Content in units.json is placeholder — see
 // site/README.md and Engineering-Log.md open questions.
 
-const DEFAULT_UNIT_ID = "LPE-GM-001";
+const DEFAULT_UNIT_ID = "GM-001";
 
 // Inline fallback so the page still works when opened directly (file://), which blocks
 // fetch() of local JSON in most browsers. GitHub Pages serves over https, where the
 // units.json fetch below is the real path.
 const FALLBACK_UNITS = {
-  "LPE-GM-001": {
+  "GM-001": {
     name: "JAKE",
     callsign: "BEST MAN",
     serial: "GFAB",
     objectives: [
       "Report for duty on 10.20.2028 — full mission briefing at check-in.",
-      "Secure the groom's suit, rings, and general composure. In that order.",
+      "Plan bach party.",
       "Deliver the best man speech. Keep it under control; keep it real.",
       "Stand beside Skyler at the altar. This is the actual mission.",
     ],
-    hiddenMessage: "SERVICE LOG — This unit was custom-built by Skyler for one reason: you've always shown up when it counted. Every objective on this screen is real — 10.20.2028, for real. Thanks for saying yes to standing up there with me. — Skyler",
+    hiddenMessage: "SERVICE LOG — This unit was custom-built by Skyler for one reason: you've always shown up when it counted. Every objective on this screen is real. — Thanks for saying yes to standing up there with me. — Skyler",
     puzzleClue: "◈ INTERCEPT — SRC UNKNOWN — 61% RECOVERED ◈\n\n\"...not all of them are true. only one. it has to go first, alone — the other one still lying, still wrong. it cannot look away. not once. not even to blink — or the count forgets itself and you begin again from nothing. the second one only tells the truth after the first has already proven itself, by itself, with no one watching...\"\n\n◈ SIGNAL LOST ◈",
     puzzleLinkUrl: "",
     puzzleLinkText: "CLICK HERE TO SOLVE PUZZLE",
@@ -160,7 +160,7 @@ async function main() {
 
   armAcceptGate(() => {
     typewriter(document.getElementById("bootLog"), [
-      "LPE-GM MISSION CONTROL",
+      "GM MISSION CONTROL",
       "LINK ESTABLISHED...OK",
       `UNIT ${unitId}...ONLINE`,
       "ALL SYSTEMS NOMINAL",

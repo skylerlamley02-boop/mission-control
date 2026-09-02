@@ -1,7 +1,7 @@
 {
-  "_comment": "Real content as of 2026-08-13 — see Engineering-Log.md. puzzleClue is intentionally identical across units (same physical switch mechanic on every build). puzzleLinkUrl is intentionally BLANK per unit — each groomsman gets a different destination, and only Skyler knows them. To fill one in: paste the URL between the quotes on that unit's puzzleLinkUrl line below, save, redeploy (see README.md). 'serial' must match that unit's firmware Personalization::SERIAL_NUMBER (config.h) exactly, since it's what's physically printed/shown on the device itself — LPE-GM-00N stays as the internal URL routing key only (?unit=...), it is never shown on screen. Units 002/003 need their real serial filled in once chosen/flashed.",
+  "_comment": "Real content as of 2026-08-13 — see Engineering-Log.md. puzzleClue is intentionally identical across units (same physical switch mechanic on every build). puzzleLinkUrl is intentionally BLANK per unit — each groomsman gets a different destination, and only Skyler knows them. To fill one in: paste the URL between the quotes on that unit's puzzleLinkUrl line below, save, redeploy (see README.md). 'serial' must match that unit's firmware Personalization::SERIAL_NUMBER (config.h) exactly, since it's what's physically printed/shown on the device itself — GM-00N stays as the internal URL routing key only (?unit=...), it is never shown on screen. Units 002/003 need their real serial filled in once chosen/flashed.",
   "units": {
-    "LPE-GM-001": {
+    "GM-001": {
       "name": "JAKE",
       "callsign": "BEST MAN",
       "serial": "GFAB",
@@ -16,7 +16,7 @@
       "puzzleLinkUrl": "",
       "puzzleLinkText": "CLICK HERE TO SOLVE PUZZLE"
     },
-    "LPE-GM-002": {
+    "GM-002": {
       "name": "ALEX",
       "callsign": "GROOMSMAN",
       "serial": "[SERIAL]",
@@ -31,7 +31,7 @@
       "puzzleLinkUrl": "",
       "puzzleLinkText": "CLICK HERE TO SOLVE PUZZLE"
     },
-    "LPE-GM-003": {
+    "GM-003": {
       "name": "BEN",
       "callsign": "GROOMSMAN",
       "serial": "[SERIAL]",

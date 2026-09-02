@@ -22,7 +22,7 @@ Each unit's entry in `units.json` has three puzzle-related fields:
 - `puzzleLinkText` — the clickable link's visible text, defaults to "CLICK HERE TO SOLVE PUZZLE."
 
 **To add Jake's, Alex's, or Ben's link:** open `units.json`, find that unit's block
-(`LPE-GM-001` = Jake, `LPE-GM-002` = Alex, `LPE-GM-003` = Ben), and paste the real URL between the
+(`GM-001` = Jake, `GM-002` = Alex, `GM-003` = Ben), and paste the real URL between the
 quotes on that unit's `puzzleLinkUrl` line, e.g.:
 ```json
 "puzzleLinkUrl": "https://your-actual-destination.example",
@@ -42,9 +42,9 @@ link both live under "AUX CHANNEL — RECOVERED FRAGMENT."
 ## Local preview
 Opening `index.html` directly (double-click / `file://`) mostly works — it falls back to inline
 placeholder data since browsers block `fetch()` of local JSON over `file://`. To see the real
-`units.json`-driven behavior (and to test `?unit=LPE-GM-002` style personalization), serve the
+`units.json`-driven behavior (and to test `?unit=GM-002` style personalization), serve the
 folder over HTTP instead, e.g. `npx serve` or `python -m http.server` from this directory, then open
-`http://localhost:<port>/?unit=LPE-GM-001`.
+`http://localhost:<port>/?unit=GM-001`.
 
 ## Deploying to GitHub Pages (Development-Plan.md Phase 4)
 **No git or command-line experience required** — GitHub's website supports drag-and-drop upload.
@@ -71,6 +71,6 @@ Quick version:
      a record → URL/URI**, paste the site URL (per-unit format below), then hold the phone against
      the NTAG215 sticker to write it. Do this per Development-Plan.md Phase 4's exit criterion
      (confirm the tap opens the site on both iPhone and Android).
-6. Per-unit links: point each groomsman's NFC sticker at `<pages-url>/?unit=LPE-GM-00N` so the one
+6. Per-unit links: point each groomsman's NFC sticker at `<pages-url>/?unit=GM-00N` so the one
    deployed site shows that unit's personnel/mission content — matches the "one site, config-driven"
    goal in Spec Section 9 instead of needing 3 separate deployments.
