@@ -11,7 +11,7 @@ const FALLBACK_UNITS = {
   "GM-001": {
     name: "JAKE",
     callsign: "BEST MAN",
-    serial: "GFAB",
+    serial: "GREASY FAT ASS BITCH",
     objectives: [
       "Report for duty on 10.20.2028 — full mission briefing at check-in.",
       "Plan bach party.",
