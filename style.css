@@ -59,6 +59,15 @@ html, body {
   color: var(--amber-dim);
 }
 
+.landing-callsign {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  color: var(--green);
+  text-shadow: 0 0 10px rgba(57,255,136,0.5);
+}
+
 .accept-btn {
   appearance: none;
   width: 100%;

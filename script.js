@@ -19,7 +19,7 @@ const FALLBACK_UNITS = {
       "Stand beside Skyler at the altar. This is the actual mission.",
     ],
     hiddenMessage: "SERVICE LOG — This unit was custom-built by Skyler for one reason: you've always shown up when it counted. Every objective on this screen is real. — Thanks for saying yes to standing up there with me. — Skyler",
-    puzzleClue: "◈ INTERCEPT — SRC UNKNOWN — 61% RECOVERED ◈\n\n\"...not all of them are true. only one. it has to go first, alone — the other one still lying, still wrong. it cannot look away. not once. not even to blink — or the count forgets itself and you begin again from nothing. the second one only tells the truth after the first has already proven itself, by itself, with no one watching...\"\n\n◈ SIGNAL LOST ◈",
+    puzzleClue: "◈ INTERCEPT — SRC UNKNOWN — 74% RECOVERED ◈\n\n\"three sit in a row, but only two are real. the middle stays silent — it has nothing to reveal. right must speak first, and prove itself alone, then left may follow — only then is the code known.\"\n\n◈ SIGNAL LOST ◈",
     puzzleLinkUrl: "",
     puzzleLinkText: "CLICK HERE TO SOLVE PUZZLE",
   },
@@ -140,6 +140,8 @@ async function main() {
   const unitId = getUnitId();
   const units = await loadUnits();
   const unit = units[unitId] || Object.values(units)[0];
+
+  document.getElementById("landingCallsign").textContent = unit.callsign;
 
   document.getElementById("pName").textContent = unit.name;
   document.getElementById("pCallsign").textContent = unit.callsign;
