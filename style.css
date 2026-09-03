@@ -1,10 +1,10 @@
 :root {
-  --amber: #ffb000;
-  --amber-dim: #7a5400;
+  --accent: #39ff14;
+  --accent-dim: #1a6b12;
   --green: #39ff88;
-  --bg: #0a0d0a;
-  --panel-bg: #0f140f;
-  --border: #2a3a2a;
+  --bg: #050705;
+  --panel-bg: #0a0f0a;
+  --border: #234023;
   --danger: #ff4d4d;
   font-size: 16px;
 }
@@ -56,7 +56,7 @@ html, body {
   margin: 0;
   font-size: 0.85rem;
   letter-spacing: 0.15em;
-  color: var(--amber-dim);
+  color: var(--accent-dim);
 }
 
 .landing-callsign {
@@ -76,19 +76,19 @@ html, body {
   font-size: 1.35rem;
   font-weight: bold;
   letter-spacing: 0.1em;
-  color: var(--amber);
+  color: var(--accent);
   background: transparent;
-  border: 2px solid var(--amber);
+  border: 2px solid var(--accent);
   border-radius: 2px;
   padding: 1.5rem 1rem;
   cursor: pointer;
-  text-shadow: 0 0 8px rgba(255,176,0,0.6);
-  box-shadow: 0 0 18px rgba(255,176,0,0.15), inset 0 0 18px rgba(255,176,0,0.05);
+  text-shadow: 0 0 8px rgba(57,255,20,0.6);
+  box-shadow: 0 0 18px rgba(57,255,20,0.15), inset 0 0 18px rgba(57,255,20,0.05);
   -webkit-tap-highlight-color: transparent;
 }
 .accept-btn:active,
 .accept-btn:hover {
-  background: var(--amber);
+  background: var(--accent);
   color: #000;
   text-shadow: none;
 }
@@ -101,8 +101,8 @@ html, body {
   border-bottom: 1px solid var(--border);
   letter-spacing: 0.08em;
   font-size: 0.9rem;
-  color: var(--amber);
-  text-shadow: 0 0 6px rgba(255,176,0,0.5);
+  color: var(--accent);
+  text-shadow: 0 0 6px rgba(57,255,20,0.5);
 }
 
 .panel-grid {
@@ -138,8 +138,8 @@ html, body {
   margin: 0 0 0.75rem;
   font-size: 0.85rem;
   letter-spacing: 0.15em;
-  color: var(--amber);
-  border-bottom: 1px dashed var(--amber-dim);
+  color: var(--accent);
+  border-bottom: 1px dashed var(--accent-dim);
   padding-bottom: 0.4rem;
 }
 
@@ -158,7 +158,7 @@ html, body {
   margin: 0;
   font-size: 0.95rem;
 }
-.record dt { color: var(--amber-dim); letter-spacing: 0.1em; }
+.record dt { color: var(--accent-dim); letter-spacing: 0.1em; }
 .record dd { margin: 0; color: var(--green); }
 
 .objectives {
@@ -175,7 +175,7 @@ html, body {
   padding: 0.75rem 1.25rem;
   border-top: 1px solid var(--border);
   font-size: 0.7rem;
-  color: var(--amber-dim);
+  color: var(--accent-dim);
   letter-spacing: 0.08em;
 }
 
@@ -197,7 +197,7 @@ html, body {
   justify-content: center;
   -webkit-tap-highlight-color: transparent;
 }
-.admin-hotspot:focus-visible { color: var(--amber-dim); cursor: pointer; }
+.admin-hotspot:focus-visible { color: var(--accent-dim); cursor: pointer; }
 
 .hidden-menu {
   position: fixed;
@@ -214,14 +214,14 @@ html, body {
   max-width: 30rem;
   width: 100%;
   background: var(--panel-bg);
-  border: 1px solid var(--amber-dim);
+  border: 1px solid var(--accent-dim);
   padding: 1.5rem;
 }
 
 .hidden-message {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--amber);
+  color: var(--accent);
 }
 
 .anomaly-hint {
@@ -233,9 +233,9 @@ html, body {
   font-family: inherit;
   font-size: 0.75rem;
   letter-spacing: 0.05em;
-  color: var(--amber-dim);
+  color: var(--accent-dim);
   background: transparent;
-  border: 1px dashed var(--amber-dim);
+  border: 1px dashed var(--accent-dim);
   border-radius: 2px;
   padding: 0.5rem 0.6rem;
   cursor: pointer;
@@ -245,8 +245,8 @@ html, body {
 .anomaly-hint:hover,
 .anomaly-hint:active,
 .anomaly-hint:focus-visible {
-  color: var(--amber);
-  border-color: var(--amber);
+  color: var(--accent);
+  border-color: var(--accent);
   border-style: solid;
 }
 
@@ -258,8 +258,8 @@ html, body {
   white-space: pre-wrap;
   font-size: 0.85rem;
   line-height: 1.6;
-  color: var(--amber-dim);
-  border-left: 2px solid var(--amber-dim);
+  color: var(--accent-dim);
+  border-left: 2px solid var(--accent-dim);
   padding-left: 0.75rem;
   margin: 0 0 1rem;
 }
@@ -278,8 +278,8 @@ html, body {
 }
 .puzzle-link:hover { background: var(--danger); color: #000; }
 .puzzle-link.puzzle-link-pending {
-  color: var(--amber-dim);
-  border-color: var(--amber-dim);
+  color: var(--accent-dim);
+  border-color: var(--accent-dim);
   cursor: default;
   pointer-events: none;
 }
@@ -287,14 +287,14 @@ html, body {
 .close-btn {
   appearance: none;
   background: transparent;
-  border: 1px solid var(--amber-dim);
-  color: var(--amber);
+  border: 1px solid var(--accent-dim);
+  color: var(--accent);
   font-family: inherit;
   letter-spacing: 0.1em;
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
-.close-btn:hover { background: var(--amber-dim); color: #000; }
+.close-btn:hover { background: var(--accent-dim); color: #000; }
 
 .blink { animation: blink 1.4s steps(2, jump-none) infinite; }
 @keyframes blink { 50% { opacity: 0.25; } }
