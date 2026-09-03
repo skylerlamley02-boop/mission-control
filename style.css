@@ -254,6 +254,13 @@ html, body {
   margin-top: 1.25rem;
 }
 
+.puzzle-hint-note {
+  margin: 0.35rem 0 0.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--accent-dim);
+}
+
 .puzzle-clue {
   white-space: pre-wrap;
   font-size: 0.85rem;
